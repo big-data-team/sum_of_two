@@ -14,6 +14,8 @@ jobs:
         uv run pytest -v tests/
   package:
     runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main'
     steps:
     - uses: actions/checkout@v4
     - uses: astral-sh/setup-uv@v6
@@ -26,3 +28,6 @@ jobs:
     - run: >
         uv publish --publish-url https://test.pypi.org/legacy/
         --check-url https://test.pypi.org/simple/ dist/*
+      env:
+        UV_PUBLISH_USERNAME: __token__
+        UV_PUBLISH_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
