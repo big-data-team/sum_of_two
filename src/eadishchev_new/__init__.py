@@ -1,2 +1,2 @@
-def main() -> None:
-    print("Hello from eadishchev-new!")
+from .main import sum_of_two
+
