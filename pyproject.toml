@@ -1,0 +1,20 @@
+[project]
+name = "eadishchev-new"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Evgeny A", email = "eadishchev@gmail.com" }
+]
+requires-python = ">=3.11.10"
+dependencies = [
+    "ipython>=9.7.0",
+    "scikit-learn>=1.7.2",
+]
+
+[project.scripts]
+eadishchev-new = "eadishchev_new:main"
+
+[build-system]
+requires = ["uv_build>=0.9.10,<0.10.0"]
+build-backend = "uv_build"
