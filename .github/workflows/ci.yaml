@@ -33,6 +33,7 @@ jobs:
       - uses: actions/download-artifact@v7
         with:
           name: dist
+          path: dist
       - name: Publish package
         run: >
           uv publish --publish-url https://test.pypi.org/legacy/
