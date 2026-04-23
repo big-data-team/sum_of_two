@@ -13,7 +13,7 @@ jobs:
         run: uv run pytest -v
   build:
     runs-on: ubuntu-latest
-    depends-on: tests
+    needs: tests
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
